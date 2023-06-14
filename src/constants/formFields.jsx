@@ -24,7 +24,7 @@ const loginFields=[
 
 const signupFields=[
     {
-        labelText:"Username",
+        labelText:"Nama",
         labelFor:"username",
         id:"username",
         name:"username",
@@ -34,7 +34,7 @@ const signupFields=[
         placeholder:"Nama Lengkap"   
     },
     {
-        labelText:"Email address",
+        labelText:"Email",
         labelFor:"email-address",
         id:"email-address",
         name:"email",
@@ -44,17 +44,17 @@ const signupFields=[
         placeholder:"Contoh: johndee@gmail.com"   
     },
     {
-        labelText:"Password",
-        labelFor:"password",
-        id:"password",
-        name:"password",
-        type:"password",
-        autoComplete:"current-password",
+        labelText:"Nomor Telepon",
+        labelFor:"telepon",
+        id:"telepon",
+        name:"telepon",
+        type:"telepon",
+        autoComplete:"telepon",
         isRequired:true,
         placeholder:"+62"   
     },
     {
-        labelText:"Confirm Password",
+        labelText:"Password",
         labelFor:"confirm-password",
         id:"confirm-password",
         name:"confirm-password",

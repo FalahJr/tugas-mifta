@@ -1,8 +1,9 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
+import OTP from "./pages/otp";
 //theme
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 //core
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
+            <Route path="/otp" element={<OTP />} />
           </Routes>
         </BrowserRouter>
       </div>
