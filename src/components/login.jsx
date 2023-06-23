@@ -159,7 +159,7 @@ const Login = () => {
     // }, [username,password])
 
     return (
-        <form className="mt-8 space-y-6 w-screen px-20 xl:w-4/6 md:px-0 md:w-5/6 " onSubmit={handleSubmit}>
+        <form className="mt-8 space-y-6 w-screen px-20  md:px-0 md:w-full " onSubmit={handleSubmit}>
             <div className="-space-y-px">
                 {
                     fields.map(field =>
