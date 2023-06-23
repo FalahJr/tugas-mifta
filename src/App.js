@@ -1,50 +1,43 @@
-import logo from "./logo.svg";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/login";
+import Authmiddleware from "./middleware/Authmiddleware";
 import Signup from "./pages/signup";
-import OTP from "./pages/otp";
-import ResetPasswordPage from "./pages/resetPassword";
-
+import OTPRegister from "./pages/otpRegister";
+import OTPResetPassword from "./pages/otpResetPassword";
+import ResetPasswordBaru from "./pages/resetPasswordBaru";
+import ResetPassword from "./pages/resetPassword";
+import Cookies from 'universal-cookie';
+ 
 //theme
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 //core
 import "primereact/resources/primereact.min.css";
-import ResetPassword from "./components/resetPassword";
 
 function App() {
+  const cookies = new Cookies()
+
+  const token = cookies.get('token')
   return (
     <div className="App">
       {/* <div className="min-h-full h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8"> */}
       {/* <div className="max-w-xl w-full space-y-8"> */}
       <div className="w-full h-screen">
-        <BrowserRouter>
+
+          <BrowserRouter>
           <Routes>
+            <Route path="/register" element={<Authmiddleware component={Signup} />} />
             <Route path="/" element={<Login />} />
-            <Route path="/signup" element={<Signup />} />
-            <Route path="/otp" element={<OTP />} />
-            <Route path="/reset" element={<ResetPasswordPage />} />
+            <Route path="/otp-register" element={<OTPRegister />} />
+            <Route path="/otp-reset-password" element={<OTPResetPassword />} />
+            <Route path="/reset-password" element={<ResetPassword />} />
+            <Route
+              path="/reset-password-baru"
+              element={<ResetPasswordBaru />}
+            />
           </Routes>
         </BrowserRouter>
       </div>
-      {/* </div>
-      </div> */}
-      {/* <Login/> */}
-      {/* <Register/> */}
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
     </div>
   );
 }
